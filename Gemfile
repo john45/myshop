@@ -26,9 +26,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'active_admin-sortable_tree'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
-gem 'jquery-ui-rails', '~> 4.2.1'
+gem 'jquery-ui-rails', '~> 5.0'
 gem 'annotate'
 gem 'ancestry'
 
