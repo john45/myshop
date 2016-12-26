@@ -11,6 +11,13 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <table class="table">
+      <tr><td>head - logo of magazin and etc</td></tr>
+      <tr>
+        <td>left panel</td>
+        <td><%= yield %></td>
+      </tr>
+      <tr><td>footer</td></tr>
+    </table>
   </body>
 </html>

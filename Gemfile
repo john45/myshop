@@ -32,6 +32,7 @@ gem 'devise'
 gem 'jquery-ui-rails', '~> 5.0'
 gem 'annotate'
 gem 'ancestry'
+gem 'will_paginate', '~> 3.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
