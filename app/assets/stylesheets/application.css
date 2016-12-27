@@ -14,10 +14,3 @@
  *= require_self
  *= stub active_admin
  */
-.table {
-    border: solid 1px black;
-
-}
-tr, td {
-    border: solid 1px black;
-}

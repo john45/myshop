@@ -9,15 +9,25 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <table class="table">
-      <tr><td>head - logo of magazin and etc</td></tr>
-      <tr>
-        <td>left panel</td>
-        <td><%= yield %></td>
-      </tr>
-      <tr><td>footer</td></tr>
-    </table>
+    <%= render 'layouts/header' %>
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <p class="lead">Adamenko shop of item</p>
+          <div class="list-group">
+            <a href="#" class="list-group-item">Category 1</a>
+            <a href="#" class="list-group-item">Category 2</a>
+            <a href="#" class="list-group-item">Category 3</a>
+          </div>
+        </div>
+
+        <%= yield %>
+
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
