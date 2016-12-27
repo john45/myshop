@@ -10,11 +10,19 @@
     <div class="ratings">
       <p class="pull-right"><%= pluralize(product.reviews.all.count, 'review') %></p>
       <p>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
+        <% total_rating = 0 %>
+        <% product.reviews.each do |view| %>
+          <% total_rating += view.rating %>
+        <% end %>
+
+        <% average_rating = total_rating/product.reviews.all.count %>
+
+        <% average_rating.times do %>
+            <span class="glyphicon glyphicon-star"></span>
+        <% end %>
+        <% (5-average_rating).times do %>
+            <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
       </p>
     </div>
   </div>
