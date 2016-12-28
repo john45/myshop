@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :find_all_category, except: :add_to_cart
   def index
     @products = Product.paginate(page: params[:page], per_page: 9)
-    @category = Category.all
   end
 
   def show
@@ -17,7 +17,11 @@ class ProductsController < ApplicationController
     else
       cookies[:cart] = product_id
     end
-
     redirect_to :back
   end
+
+  private
+    def find_all_category
+      @category = Category.all
+    end
 end

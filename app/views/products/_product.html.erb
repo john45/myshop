@@ -1,6 +1,6 @@
 <div class="col-sm-4 col-lg-4 col-md-4">
   <div class="thumbnail">
-    <img src="http://placehold.it/320x150" alt="">
+    <img src="http://lorempixel.com/320/150/<%= ['technics', 'transport', 'business', 'city', 'nature'].sample %>" alt="">
     <div class="caption">
       <h4 class="pull-right"><%= number_to_currency(product.price, unit: 'грн.', format: '%n %u', separator: ',') %></h4>
       <h4><a href="#"><%= link_to product.name, product_path(product) %></a>
