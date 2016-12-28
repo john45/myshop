@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :find_all_category, except: :add_to_cart
+  before_action :last_added_products, except: :add_to_cart
   def index
     @products = Product.paginate(page: params[:page], per_page: 9)
   end
@@ -23,5 +24,9 @@ class ProductsController < ApplicationController
   private
     def find_all_category
       @category = Category.all
+    end
+
+    def last_added_products
+      @last_added_products = Product.order(created_at: :desc).limit(3)
     end
 end
