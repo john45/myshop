@@ -3,7 +3,9 @@
 
   <div class="row">
     <%= render @products %>
+    <hr>
     <%= will_paginate @products %>
+    <hr>
     Last added products
     <hr>
     <% @products = @last_added_products  %>

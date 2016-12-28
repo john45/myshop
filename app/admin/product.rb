@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+
   scope :undescribe
   permit_params :name, :description, :price, :product, :category_id
 
@@ -31,5 +32,6 @@ ActiveAdmin.register Product do
     column 'Date of creation', :created_at
     actions
   end
+
 
 end

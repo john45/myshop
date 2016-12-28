@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_action :find_all_category, except: :add_to_cart
   before_action :last_added_products, except: :add_to_cart
   def index
-    @products = Product.paginate(page: params[:page], per_page: 9)
+    @products = if params[:category]
+                  Product.where(category_id: params[:category]).paginate(page: params[:page], per_page: 9)
+                else
+                  Product.paginate(page: params[:page], per_page: 9)
+                end
   end
 
   def show
