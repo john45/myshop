@@ -12,6 +12,7 @@
 #
 
 class Product < ApplicationRecord
+  has_many :related_products
   has_many :reviews
   belongs_to :category
   scope :undescribe, -> { where(description: nil) }
