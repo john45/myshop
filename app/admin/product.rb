@@ -1,6 +1,5 @@
 ActiveAdmin.register Product do
 
-  scope :undescribe
   permit_params :name, :description, :price, :product, :category_id
 
 # See permitted parameters documentation:

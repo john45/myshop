@@ -14,6 +14,9 @@
 class Product < ApplicationRecord
   has_many :related_products
   has_many :reviews
+  has_many :feature_values
+  has_many :features, through: :feature_values
   belongs_to :category
+
   scope :undescribe, -> { where(description: nil) }
 end
