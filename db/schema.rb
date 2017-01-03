@@ -68,15 +68,6 @@ ActiveRecord::Schema.define(version: 20170102222117) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "product_categories", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_product_categories_on_category_id", using: :btree
-    t.index ["product_id"], name: "index_product_categories_on_product_id", using: :btree
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -104,6 +95,4 @@ ActiveRecord::Schema.define(version: 20170102222117) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "product_categories", "categories"
-  add_foreign_key "product_categories", "products"
 end

@@ -19,8 +19,14 @@
         <% @product.reviews.each do |view| %>
             <% total_rating += view.rating %>
         <% end %>
-
-        <% average_rating = total_rating/@product.reviews.all.count %>
+        
+        <% begin  %>
+          <% average_rating = total_rating/@product.reviews.all.count %>
+        <% rescue ZeroDivisionError %>
+          <% average_rating = 0 %>
+        <% end %>
+        
+        
 
         <% average_rating.times do %>
             <span class="glyphicon glyphicon-star"></span>
