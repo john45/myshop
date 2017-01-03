@@ -1,5 +1,6 @@
 ActiveAdmin.register Product do
-  filter :feature_values, collection: FeatureValue.all
+
+  remove_filter :feature_values, :order_products
   permit_params :name, :description, :price, :product, :category_id
 
 # See permitted parameters documentation:
@@ -31,6 +32,5 @@ ActiveAdmin.register Product do
     column 'Date of creation', :created_at
     actions
   end
-
 
 end

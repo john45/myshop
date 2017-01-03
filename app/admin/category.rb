@@ -1,5 +1,5 @@
 ActiveAdmin.register Category do
-  # permit_params :name, :ancestry
+  permit_params :name
   sortable tree: true,
            sorting_attribute: :ancestry,
            parent_method: :parent,

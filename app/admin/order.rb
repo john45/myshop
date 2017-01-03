@@ -1,5 +1,7 @@
-ActiveAdmin.register FeatureValue do
-  permit_params :title, :feature_id, :product_id
+ActiveAdmin.register Order do
+  remove_filter :order_products
+  permit_params :phone, :name, :email, :status
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
