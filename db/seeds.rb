@@ -18,20 +18,20 @@
 #   Product.create(name: name, description: description, price: price, category_id: rand(1..10))
 # end
 
-n = 1
-200.times do
-  p = Product.find(n)
-  reviews = rand(1..20)
+# n = 1
+# 200.times do
+#   p = Product.find(n)
+#   reviews = rand(1..20)
 
-  reviews.times do
-    email = Faker::Internet.email
-    author = Faker::Name.first_name + ' ' + Faker::Name.last_name
-    product_id = p.id
-    body = Faker::Lorem.paragraphs
-    rating = rand(1..5)
-    published = true
+#   reviews.times do
+#     email = Faker::Internet.email
+#     author = Faker::Name.first_name + ' ' + Faker::Name.last_name
+#     product_id = p.id
+#     body = Faker::Lorem.paragraphs
+#     rating = rand(1..5)
+#     published = true
 
-    Review.create(author: author, product_id: product_id, body: body, rating: rating, email: email, published: published)
-  end
-  n += 1
-end
+#     Review.create(author: author, product_id: product_id, body: body, rating: rating, email: email, published: published)
+#   end
+#   n += 1
+# end

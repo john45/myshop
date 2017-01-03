@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser do
-  remove_filter :user_roles
+  remove_filter :feature_values
   permit_params :email, :password, :password_confirmation
   
   index do

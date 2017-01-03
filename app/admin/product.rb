@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-
+  filter :feature_values, collection: FeatureValue.all
   permit_params :name, :description, :price, :product, :category_id
 
 # See permitted parameters documentation:
