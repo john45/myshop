@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     else
       cookies[:cart] = product_id
     end
-    redirect_to :back
+    redirect_back fallback_location: {action: 'show', id: product_id}
   end
 
   private
