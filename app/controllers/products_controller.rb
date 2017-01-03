@@ -11,6 +11,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @fea_value = {}
+    @product.feature_values.each do |feature_value|
+      @fea_value[feature_value.feature.title] = feature_value.title
+    end
+
   end
 
   def add_to_cart

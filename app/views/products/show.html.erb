@@ -12,6 +12,15 @@
         </strong>over at maxoffsky.com!</p>
       <p><%= @product.description %></p>
     </div>
+    <div class="features" style="background-color: steelblue">
+      <p>Specifications</p>
+
+      <% @fea_value.each do |key, value| %>
+        <%= key %>: - <%= value %> <br>
+      <% end %>
+
+
+    </div>
     <div class="ratings">
       <p class="pull-right"><%= pluralize(@product.reviews.all.count, 'review') %></p>
       <p>
