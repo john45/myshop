@@ -1,0 +1,22 @@
+it's simple Cart
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<ul>
+  <% @cart.order_products.each do |order_product| %>
+    <li><%= order_product.quantity %> x
+        <%= link_to order_product.product.name,
+                    product_path(order_product.product) %>:
+        <%= number_to_currency(order_product.total_price,
+                               unit: 'грн.',
+                               format: '%n %u',
+                               separator: ',') %>
+      <%= link_to 'Delete from cart', order_product,
+                   method: :delete, confirm: 'Are you sure?' %>
+    </li>
+  <% end %>
+</ul>
+
+Total price is <%= number_to_currency(@cart.total_price, unit: 'грн.', format: '%n %u', separator: ',') %>
+
+<%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?' %>
