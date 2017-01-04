@@ -18,7 +18,9 @@
           <a href="#">About</a>
         </li>
         <li>
-          <%= link_to 'Cart', cart_path(1) %>
+          <span >
+            <%= link_to '', cart_path(1), class: 'glyphicon glyphicon-shopping-cart' %>
+          </span>
         </li>
         <li>
           <%= link_to 'Admin', admin_root_path %>
