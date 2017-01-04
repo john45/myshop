@@ -8,9 +8,12 @@
 #  quantity     :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  id           :integer          not null, primary key
+#  cart_id      :integer
 #
 
 class OrderProduct < ApplicationRecord
+    belongs_to :cart
     belongs_to :product
     belongs_to :order
 end

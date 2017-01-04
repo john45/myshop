@@ -19,5 +19,16 @@ class Product < ApplicationRecord
   has_many :order_products
   has_many :orders, through: :order_products
   belongs_to :category
-
+  
+  before_destroy :ensure_not_referenced_by_any_order_product
+  
+  private
+    def ensure_not_referenced_by_any_order_product
+      if order_products.empty?
+        return true
+      else
+        errors.add(:base, 'In order_products now')
+        return false
+      end
+    end
 end
