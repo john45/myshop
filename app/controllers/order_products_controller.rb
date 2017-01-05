@@ -11,10 +11,12 @@ class OrderProductsController < ApplicationController
     end
   end
 
+
   def destroy
     item = OrderProduct.find(params[:id])
     if item.destroy
       redirect_to current_cart
     end
   end
+
 end
