@@ -1,0 +1,21 @@
+<%= form_for @order do |f| %>
+  <% if @order.errors.any? %>
+    <%= pluralize(@order.errors.count, 'error') %>
+      <% @order.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    <% end %>
+  <p>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :phone, "Phone: " %>
+    <%= f.text_field :phone, size: 15 %>
+  </p>
+  <p>
+    <%= f.label :email, "Email: " %>
+    <%= f.email_field :email, size: 40 %>
+  </p>
+  <%= f.submit 'Place Order' %>
+<% end %>

@@ -22,5 +22,6 @@
                                         unit: 'грн.',
                                         format: '%n %u',
                                         separator: ',') %>
-  <%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?' %>
+  <%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>
+  <%= link_to 'Do Order', new_order_path, class: 'btn btn-warning' %>
 <% end %>
