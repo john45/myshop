@@ -8,6 +8,7 @@ class CartsController < ApplicationController
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
+    session[:count_of_products] = nil
     redirect_to root_url, notice: 'Cart is empty'
   end
 end

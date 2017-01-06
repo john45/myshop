@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
     
   def create
+    @category = Category.all
     @order = Order.new(order_params)
     @order.add_order_product_from_cart(current_cart)
     
