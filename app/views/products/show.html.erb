@@ -30,15 +30,15 @@
 
     <br>
     <div class="ratings">
-      <p class="pull-right"><%= pluralize(@product.reviews.all.count, 'review') %></p>
+      <p class="pull-right"><%= pluralize(@product.reviews.list_of_published_only.count, 'review') %></p>
       <p>
         <% total_rating = 0 %>
-        <% @product.reviews.each do |view| %>
+        <% @product.reviews.list_of_published_only.each do |view| %>
             <% total_rating += view.rating %>
         <% end %>
         
         <% begin  %>
-          <% average_rating = total_rating/@product.reviews.all.count %>
+          <% average_rating = total_rating/@product.reviews.list_of_published_only.count %>
         <% rescue ZeroDivisionError %>
           <% average_rating = 0 %>
         <% end %>
@@ -59,10 +59,13 @@
   <div class="well">
 
     <div class="text-right">
-      <a class="btn btn-success">Leave a Review</a>
+      <%= link_to 'Leave a Review', new_review_path,class: 'btn btn-success', remote: true %>
     </div>
 
-    <% @product.reviews.all.each do |review| %>
+    <div class="new_review">
+      <%= render 'reviews/form', review: @review, product: @product %>
+    </div>
+    <% @product.reviews.list_of_published_only.each do |review| %>
         <%= render 'products/review', review: review %>
     <% end %>
 

@@ -95,6 +95,7 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.6.1)
       execjs
+    awesome_print (1.7.0)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
@@ -250,6 +251,7 @@ DEPENDENCIES
   acts_as_list
   ancestry
   annotate
+  awesome_print
   bootstrap-sass (= 3.3.6)
   bootstrap-will_paginate (= 0.0.10)
   byebug

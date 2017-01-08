@@ -7,7 +7,7 @@
     <% end %>
     <% (5 - review.rating).times do %>
       <span class="glyphicon glyphicon-star-empty"></span>
-    <% end %>
+    <% end %>x
     <%= review.author %>
     <span class="pull-right"><%= distance_of_time_in_words_to_now review.created_at %></span>
     <p><%= review.body %></p>

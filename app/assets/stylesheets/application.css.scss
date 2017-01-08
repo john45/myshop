@@ -17,10 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .nested_categories {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
+.nested_categories {
+  margin-left: 5px;
+}
 .glyphicon.glyphicon-shopping-cart{
   font-size: 25px;
   text-decoration: none;
@@ -34,4 +38,15 @@
 }
 .navbar-nav, .navbar-header   {
   margin-top: 10px;
+}
+.list-group-item {
+  border: none;
+  //margin: 1px;
+  padding-top: 1px;
+}
+ul {
+  list-style-type: none;
+}
+.new_review {
+  display: none;
 }

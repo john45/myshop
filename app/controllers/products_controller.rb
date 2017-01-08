@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :find_all_category, except: :add_to_cart
   before_action :last_added_products, except: :add_to_cart
   def index
     @products = if params[:category]
@@ -12,6 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @product = Product.find(params[:id])
     @fea_value = {}
     @product.feature_values.each do |feature_value|
@@ -33,10 +33,6 @@ class ProductsController < ApplicationController
   end
 
   private
-    def find_all_category
-      @category = Category.all
-    end
-
     def last_added_products
       @last_added_products = Product.order(created_at: :desc).limit(3)
     end

@@ -1,0 +1,15 @@
+<ul>
+<%= form_for review do |f| %>
+
+  <li><%= f.label :rating %></li>
+  <li><%= f.select :rating, Review::RATING %></li>
+  <li><%= f.label :author %></li>
+  <li><%= f.text_field :author, size: 20 %></li>
+  <li><%= f.label :email %></li>
+  <li><%= f.email_field :email %></li>
+  <li><%= f.label :body %></li>
+  <li><%= f.text_area :body %></li>
+  <li><%= f.hidden_field :product_id, value: product.id %></li>
+  <li><%= f.submit 'Leave Review' %></li>
+<% end %>
+</ul>

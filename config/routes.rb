@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+
+  get 'reviews/create'
+
   get 'order_products/create'
 
   get 'orders/new'
@@ -14,6 +18,7 @@ Rails.application.routes.draw do
   resources :order_products, only: [:create, :destroy]
   resources :carts, only: [:show, :destroy]
   resources :orders, only: [:new, :create, :destroy]
+  resources :reviews, only: [:new, :create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
