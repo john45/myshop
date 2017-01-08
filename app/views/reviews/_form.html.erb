@@ -1,5 +1,5 @@
-<ul>
-<%= form_for review do |f| %>
+<ul class="form_for_review">
+<%= form_for review, remote: true do |f| %>
 
   <li><%= f.label :rating %></li>
   <li><%= f.select :rating, Review::RATING %></li>
