@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   def index
     @products = if params[:category]
                   Product.where(category_id: params[:category]).paginate(page: params[:page], per_page: 9)
+                elsif params[:search]
+                  Product.where("name ILIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 9)
                 else
                   Product.paginate(page: params[:page], per_page: 9)
                 end

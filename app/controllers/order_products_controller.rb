@@ -20,3 +20,6 @@ class OrderProductsController < ApplicationController
     end
   end
 end
+
+@order = Order.new(order_params)
+@order.add_line_items_from_cart(@cart)

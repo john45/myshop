@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
     if @order.save
       Cart.destroy(session[:cart_id]) #or current_cart.id
       session[:cart_id] = nil
+      session[:count_of_products] = nil
       redirect_to root_url, notice: 'Thank you for your order'
     else
       @cart = current_cart

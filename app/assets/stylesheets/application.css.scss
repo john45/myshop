@@ -23,7 +23,6 @@
 
 .glyphicon.glyphicon-shopping-cart{
   font-size: 25px;
-  margin-top: 10px;
   text-decoration: none;
   color: #9d9d9d;
 }
@@ -32,4 +31,7 @@
 }
 .count {
   color: #EFEFEF;
+}
+.navbar-nav, .navbar-header   {
+  margin-top: 10px;
 }
