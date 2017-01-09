@@ -26,7 +26,9 @@
         </div>
       </div>
     </div>
-    <div class="text-right"><%= button_to 'Add to cart', order_products_path(product_id: @product),class: "btn btn-danger" %></div>
+    <span id="for_notice">
+    </span>
+    <div class="text-right"><%= button_to 'Add to cart', order_products_path(product_id: @product),class: "btn btn-danger", remote: true %></div>
 
     <br>
     <div class="ratings">
@@ -55,9 +57,7 @@
       </p>
     </div>
   </div>
-
   <div class="well">
-
     <div class="text-right">
       <%= link_to 'Leave a Review', new_review_path,class: 'btn btn-success', remote: true %>
     </div>

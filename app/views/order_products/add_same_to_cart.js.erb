@@ -1,0 +1,9 @@
+$("#quantity_order_product_<%= @order_product.id %>").text('<%= @order_product.quantity %>');
+$("#cart_total_price").text('<%= number_to_currency(@cart.total_price,
+                                        unit: 'грн.',
+                                        format: '%n %u',
+                                        separator: ',') %>');
+$("#item_total_price_<%= @order_product.id %>").text('<%= number_to_currency(@order_product.total_price,
+                               unit: 'грн.',
+                               format: '%n %u',
+                               separator: ',') %>');

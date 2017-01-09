@@ -15,7 +15,13 @@ Rails.application.routes.draw do
       post 'add_to_cart'
     end
   end
-  resources :order_products, only: [:create, :destroy]
+  resources :order_products, only: [:create, :destroy] do
+    member do
+      post 'add_same_to_cart'
+      post 'remove_same_from_cart'
+    end
+  end
+
   resources :carts, only: [:show, :destroy]
   resources :orders, only: [:new, :create, :destroy]
   resources :reviews, only: [:new, :create]

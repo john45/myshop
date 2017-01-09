@@ -1,0 +1,4 @@
+$('.count').text('<%= session[:count_of_products] %>');
+//$('.for_notice').remove();
+$('#for_notice').prepend($('<%= j render partial: 'order_products/added_to_cart'  %>').hide().fadeIn(999).delay(1000).fadeOut(999));
+

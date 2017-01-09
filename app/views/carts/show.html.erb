@@ -1,25 +1,32 @@
-
 <% if @cart.order_products.empty? %>
     <h3>Your Cart is empty</h3>
 <% else %>
   <ul>
     <% @cart.order_products.each do |order_product| %>
-      <li><%= order_product.quantity %> x
+      <li id="order_product_item_<%= order_product.id %>">
+        <%= link_to '',
+                    order_product,
+                    class: 'glyphicon glyphicon-trash',
+                    method: :delete, confirm: 'Are you sure?' %>
         <%= link_to order_product.product.name,
                     product_path(order_product.product) %>:
-        <%= number_to_currency(order_product.total_price,
+        <span id="item_total_price_<%= order_product.id %>"><%= number_to_currency(order_product.total_price,
                                unit: 'грн.',
                                format: '%n %u',
-                               separator: ',') %>
-        <%= link_to 'Delete from cart', order_product,
-                    method: :delete, confirm: 'Are you sure?' %>
+                               separator: ',') %></span>
+
+        - <span id="quantity_order_product_<%= order_product.id %>"><%= order_product.quantity %></span>
+
+        <%= link_to '', add_same_to_cart_order_product_path(order_product), class: 'glyphicon glyphicon-plus', remote: true, method: :post %> /
+        <%= link_to '', remove_same_from_cart_order_product_path(order_product), class: 'glyphicon glyphicon-minus', remote: true,  method: :post %>
+
       </li>
     <% end %>
   </ul>
-  Total price is <%= number_to_currency(@cart.total_price,
+  Total price is <span id="cart_total_price"><%= number_to_currency(@cart.total_price,
                                         unit: 'грн.',
                                         format: '%n %u',
-                                        separator: ',') %>
+                                        separator: ',') %></span><%= link_to 'Do Order', new_order_path, class: 'btn btn-warning' %>
   <%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>
-  <%= link_to 'Do Order', new_order_path, class: 'btn btn-warning' %>
+
 <% end %>

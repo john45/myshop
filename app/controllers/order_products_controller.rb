@@ -6,9 +6,29 @@ class OrderProductsController < ApplicationController
     session[:count_of_products] += 1
 
     if @order_product.save
-      redirect_to @order_product.cart
+      render 'order_products/create'
     else
       render action: 'new'
+    end
+  end
+
+  def add_same_to_cart
+    @order_product = OrderProduct.find(params[:id])
+    @order_product.quantity += 1
+    @order_product.save
+    @cart = @order_product.cart
+  end
+
+  def remove_same_from_cart
+    @order_product = OrderProduct.find(params[:id])
+    @order_product.quantity -= 1
+    @cart = @order_product.cart
+    @order_product.save
+    if @order_product.quantity.zero?
+      @order_product.destroy
+      render 'order_products/remove_same_from_cart'
+    else
+      render 'order_products/add_same_to_cart'
     end
   end
 
