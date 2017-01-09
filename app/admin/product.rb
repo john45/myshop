@@ -3,6 +3,7 @@ ActiveAdmin.register Product do
   remove_filter :feature_values, :order_products
   permit_params :name, :description, :price, :product, :category_id
 
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

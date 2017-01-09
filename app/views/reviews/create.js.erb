@@ -1,3 +1,4 @@
 $('.new_review').toggle();
 $('.form_for_review').remove();
 $('.new_review').prepend('<%= j render partial: 'reviews/form', locals: {review: @review, product: @product}  %>');
+$('.for_notice').prepend('<%= j render partial: 'reviews/success'  %>');
