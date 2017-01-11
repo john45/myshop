@@ -38,7 +38,7 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'awesome_print'
-
+gem 'faker'
 
 
 gem 'rails_12factor', group: :production
