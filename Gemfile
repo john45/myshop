@@ -39,6 +39,10 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'awesome_print'
 
+
+
+gem 'rails_12factor', group: :production
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'acts_as_list'
