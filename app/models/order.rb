@@ -12,7 +12,9 @@
 #
 
 class Order < ApplicationRecord
-  scope :unprocessored, -> { where(status: 'new') }
+  enum status: { start: 'start', in_progress: 'in progress', finish: 'finish'}
+  STATUSES = ['start', 'in progress', 'finish']
+  scope :unprocessored, -> { where(status: 'start') }
   has_many :order_products, dependent: :destroy
   validates :name, :email, :phone, presence: true
 
@@ -24,4 +26,12 @@ class Order < ApplicationRecord
          order_products << item
       end
     end
+
+  def total_price_order
+    order_products.to_a.sum { |item| item.total_price}
+  end
+
+  def quantity
+    order_products.to_a.sum { |item| item.quantity }
+  end
 end

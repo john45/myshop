@@ -22,4 +22,6 @@ ActiveAdmin.register Category do
     label :name # item content
     actions
   end
+
+
 end

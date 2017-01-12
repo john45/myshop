@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @order.add_order_product_from_cart(current_cart)
     
     if @order.save
+      @order.start!
       Cart.destroy(session[:cart_id]) #or current_cart.id
       session[:cart_id] = nil
       session[:count_of_products] = nil

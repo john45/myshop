@@ -3,6 +3,7 @@ ActiveAdmin.register Product do
   permit_params :name, :description, :price, :product, :category_id
 
 
+
   index do
     column 'Category', :category do |product|
       if product.category.name
