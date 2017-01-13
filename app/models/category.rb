@@ -10,7 +10,7 @@
 #
 
 class Category < ApplicationRecord
-  has_ancestry :orphan_strategy => :rootify
+  has_ancestry orphan_strategy: :rootify
   has_many :products
 end
 

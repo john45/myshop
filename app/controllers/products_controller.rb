@@ -1,13 +1,20 @@
 class ProductsController < ApplicationController
   before_action :last_added_products, except: :add_to_cart
   def index
-    @products = if params[:category]
-                  Product.where(category_id: params[:category]).paginate(page: params[:page], per_page: 9)
-                elsif params[:search]
-                  Product.where("name ILIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 9)
-                else
-                  Product.paginate(page: params[:page], per_page: 9)
-                end
+
+    if params[:category]
+      categories = Category.find(params[:category]).subtree_ids
+      @products = Product.where(category: categories).paginate(page: params[:page], per_page: 9)
+
+      # categories.each do |category|
+      #   @products.nil? ? @products = Product.where(category: category).paginate(page: params[:page], per_page: 9) : @products.merge(Product.where(category: category)).paginate(page: params[:page], per_page: 9)
+      # end
+      # Product.where(category_id: params[:category]).paginate(page: params[:page], per_page: 9)
+    elsif params[:search]
+      @products = Product.where("name ILIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 9)
+    else
+      @products = Product.paginate(page: params[:page], per_page: 9)
+    end
     @product_for_carusel = Product.all.sample(5)
   end
 
