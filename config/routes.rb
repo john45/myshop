@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :search_seggestions
   get 'reviews/new'
 
   get 'reviews/create'

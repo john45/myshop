@@ -1,0 +1,2 @@
+class SearchSeggestion < ApplicationRecord
+end

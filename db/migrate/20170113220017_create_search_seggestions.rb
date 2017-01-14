@@ -1,0 +1,10 @@
+class CreateSearchSeggestions < ActiveRecord::Migration[5.0]
+  def change
+    create_table :search_seggestions do |t|
+      t.string :term
+      t.integer :popularity
+
+      t.timestamps
+    end
+  end
+end
