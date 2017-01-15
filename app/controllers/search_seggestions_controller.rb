@@ -1,5 +1,5 @@
 class SearchSeggestionsController < ApplicationController
   def index
-    render json: %w[foo bar wesdf sf fdw]
+    render json: SearchSeggestion.term_for(params[:term])
   end
 end
