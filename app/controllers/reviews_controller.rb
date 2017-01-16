@@ -4,9 +4,14 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(save_params)
-    @review.save
-    @product = Product.find(params[:review][:product_id])
-    @review = Review.new
+
+    if @review.save
+      @product = Product.find(params[:review][:product_id])
+      @review = Review.new
+    else
+      @product = Product.find(params[:review][:product_id])
+      @review
+    end
     # if @review.save
     #   redirect_to product_path(params[:review][:product_id]), notice: 'Your revie will published after moderate'
     # else
