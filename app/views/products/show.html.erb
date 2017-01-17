@@ -16,15 +16,17 @@
           <h3>description</h3>
           <p><%= @product.description %></p>
         </div>
+
         <div id="menu1" class="tab-pane fade">
           <h3>specifications</h3>
           <p>
-            <% @fea_value.each do |key, value| %>
-                <b><%= key %>:</b>  - <%= value %> <br>
+            <% @product.feature_values.each do |feature_value| %>
+                <b><%= feature_value.feature.title %>:</b>  - <%= feature_value.title %> <br>
             <% end %>
           </p>
         </div>
       </div>
+
     </div>
     <span id="for_notice">
     </span>
