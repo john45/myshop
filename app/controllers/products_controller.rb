@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
       @products = Product.paginate(page: params[:page], per_page: 9)
     end
     @product_for_carusel = Product.all.sample(5)
+    render :show
   end
 
   def show

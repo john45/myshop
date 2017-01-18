@@ -1,3 +1,4 @@
+$('.count').text('<%= session[:count_of_products] %>');
 $("#quantity_order_product_<%= @order_product.id %>").text('<%= @order_product.quantity %>');
 $("#cart_total_price").text('<%= number_to_currency(@cart.total_price,
                                         unit: 'грн.',

@@ -13,6 +13,7 @@ class OrderProductsController < ApplicationController
   end
 
   def add_same_to_cart
+    session[:count_of_products] += 1
     @order_product = OrderProduct.find(params[:id])
     @order_product.quantity += 1
     @order_product.save
@@ -20,6 +21,7 @@ class OrderProductsController < ApplicationController
   end
 
   def remove_same_from_cart
+    session[:count_of_products] -= 1
     @order_product = OrderProduct.find(params[:id])
     @order_product.quantity -= 1
     @cart = @order_product.cart

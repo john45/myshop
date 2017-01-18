@@ -40,6 +40,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'awesome_print'
 gem 'faker'
 gem 'rack-mini-profiler'
+gem 'rails-controller-testing'
 
 
 gem 'rails_12factor', group: :production
