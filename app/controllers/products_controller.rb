@@ -16,17 +16,12 @@ class ProductsController < ApplicationController
       @products = Product.paginate(page: params[:page], per_page: 9)
     end
     @product_for_carusel = Product.all.sample(5)
-    render :show
+    render :index
   end
 
   def show
     @review = Review.new
     @product = Product.find(params[:id])
-    # @fea_value = {}
-    # @product.feature_values.each do |feature_value|
-    #   @fea_value[feature_value.feature.title] = feature_value.title
-    # end
-
   end
 
   def add_to_cart
