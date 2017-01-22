@@ -1,13 +1,13 @@
 # config valid only for current version of Capistrano
 lock '3.5.0'
 
-set :repo_url, '<<YOUR APP REPO>>'
+set :repo_url, 'https://github.com/john45/myshop'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :user, 'deployer'
-set :application, '<<YOUR APPNAME>>'
+set :application, 'myshop'
 set :rails_env, 'production'
-server '<<YOUR SERVER>>', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
+server '139.59.211.196', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
