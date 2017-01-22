@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
     end
 
   def image_url_for_admin
-    image_url("http://lorempixel.com/50/30/#{['technics', 'transport', 'business', 'city', 'nature'].sample}")
+    image_url("http://lorempixel.com/50/30/#{%w(technics transport business city nature).sample}}")
   end
 end

@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
   config.per_page = 10
   remove_filter :feature_values, :order_products
   permit_params :name, :description, :price, :product, :category_id
-  
+
   batch_action :destroy do |products|
     redirect_to admin_products_path, alert: "Didn't really delete these!"
   end
@@ -10,12 +10,7 @@ ActiveAdmin.register Product do
   index do |products|
     selectable_column
     column 'Image' do |product|
-      link_to image_tag(image_url("http://lorempixel.com/50/30/#{['technics',
-                                                                  'transport',
-                                                                  'business',
-                                                                  'city',
-                                                                  'nature'].sample}")),
-              admin_product_path(product)
+      link_to image_tag(image_url("http://lorempixel.com/50/30/#{%w(technics transport business city nature).sample}")), admin_product_path(product)
     end
     column 'Category', :category do |product|
       if product.category.name
