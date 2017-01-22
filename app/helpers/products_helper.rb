@@ -1,6 +1,6 @@
 module ProductsHelper
-  def image_url_for_karusel
-    image_url("http://lorempixel.com/800/300/#{['technics',
+  def image_url_for_img_tag(width=800, high=300)
+    image_url("http://lorempixel.com/#{width}/#{high}/#{['technics',
                                                 'transport',
                                                 'business',
                                                 'city',
