@@ -42,4 +42,5 @@ bower.json
 .powenv
 
 # Ignore Byebug command history file.
-.byebug_history
+.byebug_history/config/database.production.yml
+/config/secrets.production.yml
