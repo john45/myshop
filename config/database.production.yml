@@ -81,6 +81,6 @@ test:
 production:
   <<: *default
   database: myshop_production
-  username: myshop
-  #password: PASSW0RD
-  password: <%= ENV['MYSHOP_DATABASE_PASSWORD'] %>
+  username: deployer
+  password: deployer
+#  password: <%= ENV['MYSHOP_DATABASE_PASSWORD'] %>
