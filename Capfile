@@ -4,6 +4,16 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 
+require 'capistrano/nginx'
+require 'capistrano/puma'
+require 'capistrano/puma/nginx'
+require 'capistrano/rvm'
+require 'capistrano/rails'
+require 'capistrano/rails/db'
+require 'capistrano/rails/console'
+require 'capistrano/upload-config'
+require 'sshkit/sudo'
+
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
