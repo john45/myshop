@@ -1,5 +1,5 @@
 class SearchSeggestion < ApplicationRecord
-  attr_accessor :term, :popularity
+  # attr_accessor :term, :popularity
 
   def self.term_for(prefix)
     seggestion = where("term ILIKE ?", "#{prefix}_%")
