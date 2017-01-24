@@ -1,7 +1,6 @@
 <div class="col-sm-4 col-lg-4 col-md-4">
   <div class="thumbnail">
-    <%= link_to (image_tag(image_url_for_img_tag(320,150))), product_path(product) %>
-    <!--<img src="http://lorempixel.com/320/150/<%= ['technics', 'transport', 'business', 'city', 'nature'].sample %>" alt="">-->
+    <%= link_to (image_tag("320x150/#{rand(11..20)}.jpg")), product_path(product) %>
     <div class="caption">
       <h4 class="pull-right"><%= number_to_currency(product.price, unit: 'грн.', format: '%n %u', separator: ',') %></h4>
       <h4><a href="#"><%= link_to product.name, product_path(product) %></a>

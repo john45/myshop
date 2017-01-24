@@ -24,7 +24,7 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: {minimum: 3}
 
   before_destroy :ensure_not_referenced_by_any_order_product
-  
+
   private
     def ensure_not_referenced_by_any_order_product
       if order_products.empty?

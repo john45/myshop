@@ -310,15 +310,15 @@ Style/TrailingBlankLines:
 
 # Offense count: 9
 # Cop supports --auto-correct.
-Style/TrailingWhitespace:
-  Exclude:
-    - 'app/admin/admin_user.rb'
-    - 'app/admin/product.rb'
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/orders_controller.rb'
-    - 'app/models/admin_user.rb'
-    - 'app/models/product.rb'
-    - 'spec/factories/products.rb'
+#Style/TrailingWhitespace:
+#  Exclude:
+#    - 'app/admin/admin_user.rb'
+#    - 'app/admin/product.rb'
+#    - 'app/controllers/application_controller.rb'
+#    - 'app/controllers/orders_controller.rb'
+#    - 'app/models/admin_user.rb'
+#    - 'app/models/product.rb'
+#    - 'spec/factories/products.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

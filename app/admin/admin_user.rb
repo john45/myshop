@@ -1,7 +1,7 @@
 ActiveAdmin.register AdminUser do
   remove_filter :feature_values
   permit_params :email, :password, :password_confirmation
-  
+
   index do
     selectable_column
     id_column

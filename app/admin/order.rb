@@ -7,10 +7,6 @@ ActiveAdmin.register Order do
   scope :finish
 
   index do |orders|
-    column 'Image' do |order|
-      link_to image_tag(image_url("http://lorempixel.com/50/30/#{%w(technics transport business city nature).sample}")),
-              admin_order_path(order)
-    end
     column :name
     column :email
     column :phone

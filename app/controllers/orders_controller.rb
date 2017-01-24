@@ -3,12 +3,12 @@ class OrdersController < ApplicationController
     @order = Order.new
     @category = Category.all
   end
-    
+
   def create
     @category = Category.all
     @order = Order.new(order_params)
     @order.add_order_product_from_cart(current_cart)
-    
+
     if @order.save
       @order.start!
       Cart.destroy(session[:cart_id]) #or current_cart.id
@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
       render :new
     end
   end
-  
+
   private
     def order_params
       params.require(:order).permit(:name, :phone, :email, :status)

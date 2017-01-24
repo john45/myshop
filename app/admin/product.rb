@@ -10,7 +10,7 @@ ActiveAdmin.register Product do
   index do |products|
     selectable_column
     column 'Image' do |product|
-      link_to image_tag(image_url("http://lorempixel.com/50/30/#{%w(technics transport business city nature).sample}")), admin_product_path(product)
+      link_to image_tag(image_url("50x30/#{rand(4)}.jpg")), admin_product_path(product)
     end
     column 'Category', :category do |product|
       if product.category.name
