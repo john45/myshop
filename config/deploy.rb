@@ -7,7 +7,7 @@ set :repo_url, 'https://github.com/john45/myshop'
 set :user, 'deployer'
 set :application, 'myshop'
 set :rails_env, 'production'
-server '139.59.211.196', user: :user.to_s, roles: %w{app db web}, primary: true
+server '139.59.211.196', user: fetch(:user).to_s, roles: %w{app db web}, primary: true
 # server '139.59.211.196', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
