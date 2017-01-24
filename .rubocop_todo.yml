@@ -322,9 +322,9 @@ Style/TrailingWhitespace:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/UnneededInterpolation:
-  Exclude:
-    - 'config/deploy.rb'
+#Style/UnneededInterpolation:
+#  Exclude:
+#    - 'config/deploy.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
