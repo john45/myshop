@@ -15,8 +15,4 @@ class ApplicationController < ActionController::Base
     def find_all_category
       @category = Category.all
     end
-
-  def image_url_for_admin
-    image_url("http://lorempixel.com/50/30/#{%w(technics transport business city nature).sample}}")
-  end
 end

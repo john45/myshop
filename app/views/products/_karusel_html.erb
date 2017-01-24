@@ -14,11 +14,11 @@
         <% @product_for_carusel.each do |product| %>
           <% if i == 0 %>
             <div class="item active">
-              <%= link_to (image_tag("800x300/#{rand(4)}.jpg")), product_path(product) %>
+              <%= link_to (image_tag("800x300/#{rand(4)}.jpg", class: 'slide-image')), product_path(product) %>
             </div>
           <% else %>
             <div class="item">
-              <%= link_to (image_tag("800x300/#{rand(4)}.jpg")), product_path(product) %>
+              <%= link_to (image_tag("800x300/#{rand(4)}.jpg", class: 'slide-image')), product_path(product) %>
             </div>
           <% end %>
             <% i += 1 %>
