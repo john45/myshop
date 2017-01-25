@@ -2,10 +2,10 @@
   <div class="thumbnail">
     <%= link_to (image_tag("320x150/#{rand(11..20)}.jpg")), product_path(product) %>
     <div class="caption">
-      <h4 class="pull-right"><%= number_to_currency(product.price, unit: 'грн.', format: '%n %u', separator: ',') %></h4>
       <h4><a href="#"><%= link_to product.name, product_path(product) %></a>
       </h4>
       <p><%= truncate(product.description, length: 25){ link_to '...Fool description', product_path(product) } %></p>
+      <h4 class="pull-right"><%= number_to_currency(product.price, unit: 'грн.', format: '%n %u', separator: ',') %></h4>
     </div>
     <div class="ratings">
       <p class="pull-right"><%= pluralize(product.reviews.list_of_published_only.count, 'review') %></p>
