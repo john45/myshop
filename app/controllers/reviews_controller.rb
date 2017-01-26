@@ -12,11 +12,6 @@ class ReviewsController < ApplicationController
       @product = Product.find(params[:review][:product_id])
       @review
     end
-    # if @review.save
-    #   redirect_to product_path(params[:review][:product_id]), notice: 'Your revie will published after moderate'
-    # else
-    #
-    # end
   end
 
   private
