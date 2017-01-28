@@ -1,8 +1,8 @@
-ActionMailer::Base.smtp_settings = {
-    user_name: 'SMTP_Injection',
-    password: '44f798ab0bbb2df9c8eec07ff6ac775ea32c8dbd',
-    address: 'smtp.sparkpostmail.com',
-    port: 587,
-    enable_starttls_auto: true,
-    format: :html,
-    from: 'admin@adamenko.pp.ua'}
+# ActionMailer::Base.smtp_settings = {
+#     user_name: 'postmaster@adamenko.pp.ua',
+#     password: 'vigilant8',
+#     address: 'ssl://smtp.yandex.ru',
+#     port: 465,
+#     enable_starttls_auto: true,
+#     format: :html,
+#     from: 'postmaster@adamenko.pp.ua'}

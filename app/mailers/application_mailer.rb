@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "admin@sparkpostbox.com"
+  default from: "postmaster@adamenko.pp.ua"
   layout 'mailer'
 end
