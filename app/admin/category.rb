@@ -18,10 +18,8 @@ ActiveAdmin.register Category do
 #   permitted
 # end
 
-  index :as => :sortable do
+  index as: :sortable do
     label :name # item content
     actions
   end
-
-
 end

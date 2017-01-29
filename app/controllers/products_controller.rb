@@ -1,15 +1,15 @@
 class ProductsController < ApplicationController
   before_action :last_added_products, except: :add_to_cart
   def index
-
-    @products = if params[:category]
-      categories = Category.find(params[:category]).subtree_ids
-      Product.where(category: categories)
-    elsif params[:search]
-      Product.where("name ILIKE ?", "%#{params[:search]}%")
-    else
-      Product.all
-    end.paginate(page: params[:page], per_page: 9)
+    @products =
+      if params[:category]
+        categories = Category.find(params[:category]).subtree_ids
+        Product.where(category: categories)
+      elsif params[:search]
+        Product.where("name ILIKE ?", "%#{params[:search]}%")
+      else
+        Product.all
+      end.paginate(page: params[:page], per_page: 9)
 
     @product_for_carusel = Product.all.sample(5)
     render :index
@@ -29,11 +29,12 @@ class ProductsController < ApplicationController
     else
       cookies[:cart] = product_id
     end
-    redirect_back fallback_location: {action: 'show', id: product_id}
+    redirect_back fallback_location: { action: 'show', id: product_id }
   end
 
   private
-    def last_added_products
-      @last_added_products = Product.order(created_at: :desc).limit(3)
-    end
+
+  def last_added_products
+    @last_added_products = Product.order(created_at: :desc).limit(3)
+  end
 end

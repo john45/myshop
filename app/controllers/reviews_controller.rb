@@ -15,11 +15,12 @@ class ReviewsController < ApplicationController
   end
 
   private
-    def save_params
-      params.require(:review).permit(:author,
-                                     :product_id,
-                                     :body,
-                                     :rating,
-                                     :email)
-    end
+
+  def save_params
+    params.require(:review).permit(:author,
+                                   :product_id,
+                                   :body,
+                                   :rating,
+                                   :email)
+  end
 end

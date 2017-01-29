@@ -13,9 +13,7 @@ ActiveAdmin.register Product do
       link_to image_tag(image_url("50x30/#{rand(4)}.jpg")), admin_product_path(product)
     end
     column 'Category', :category do |product|
-      if product.category.name
-        product.category.name
-      end
+      product.category.name if product.category.name
     end
     column 'name of item product', :name
     column 'describe of product', :description
@@ -27,5 +25,4 @@ ActiveAdmin.register Product do
     column 'Date of creation', :created_at
     actions
   end
-
 end

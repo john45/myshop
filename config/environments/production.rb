@@ -47,7 +47,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -87,12 +87,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'www.adamenko.pp.ua' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :tls => true,
-      address: 'smtp.yandex.ru',
-      port: 465,
-      domain: 'adamenko.pp.ua',
-      authentication: 'plain',
-      user_name: 'postmaster@adamenko.pp.ua',
-      password: 'vigilant8'
+    tls: true,
+    address: 'smtp.yandex.ru',
+    port: 465,
+    domain: 'adamenko.pp.ua',
+    authentication: 'plain',
+    user_name: 'postmaster@adamenko.pp.ua',
+    password: 'vigilant8'
   }
 end

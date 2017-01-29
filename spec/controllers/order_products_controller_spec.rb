@@ -10,5 +10,4 @@ RSpec.describe OrderProductsController, type: :controller do
       expect(count_of_products_in_cart).to eq(session[:count_of_products].to_i + 1)
     end
   end
-
 end

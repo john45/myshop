@@ -20,18 +20,19 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_products
   belongs_to :category
 
-  validates :name, presence: true, length: {minimum: 3}
-  validates :description, presence: true, length: {minimum: 3}
+  validates :name, presence: true, length: { minimum: 3 }
+  validates :description, presence: true, length: { minimum: 3 }
 
   before_destroy :ensure_not_referenced_by_any_order_product
 
   private
-    def ensure_not_referenced_by_any_order_product
-      if order_products.empty?
-        return true
-      else
-        errors.add(:base, 'In order_products now')
-        return false
-      end
+
+  def ensure_not_referenced_by_any_order_product
+    if order_products.empty?
+      true
+    else
+      errors.add(:base, 'In order_products now')
+      false
     end
+  end
 end

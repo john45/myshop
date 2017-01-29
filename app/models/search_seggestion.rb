@@ -1,5 +1,4 @@
 class SearchSeggestion < ApplicationRecord
-
   def self.term_for(prefix)
     seggestion = where("term ILIKE ?", "#{prefix}_%")
     seggestion.order('popularity desc').limit(10).pluck(:term)

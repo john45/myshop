@@ -37,8 +37,6 @@ class OrderProductsController < ApplicationController
   def destroy
     item = OrderProduct.find(params[:id])
     session[:count_of_products] -= 1
-    if item.destroy
-      redirect_to current_cart
-    end
+    redirect_to current_cart if item.destroy
   end
 end

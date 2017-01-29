@@ -1,6 +1,5 @@
 ActiveAdmin.register Feature do
   remove_filter :feature_values
-
   permit_params :title
 
 # See permitted parameters documentation:
@@ -15,6 +14,4 @@ ActiveAdmin.register Feature do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
-
 end

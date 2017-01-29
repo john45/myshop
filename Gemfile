@@ -42,7 +42,6 @@ gem 'faker'
 gem 'rack-mini-profiler'
 gem 'rails-controller-testing'
 
-
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
@@ -56,7 +55,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'rubocop', require: false
-
 end
 
 group :development do

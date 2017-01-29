@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       @order.start!
-      Cart.destroy(session[:cart_id]) #or current_cart.id
+      Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
       session[:count_of_products] = nil
       OrderMailer.order_email(@order).deliver_later
@@ -24,7 +24,8 @@ class OrdersController < ApplicationController
   end
 
   private
-    def order_params
-      params.require(:order).permit(:name, :phone, :email, :status)
-    end
+
+  def order_params
+    params.require(:order).permit(:name, :phone, :email, :status)
+  end
 end

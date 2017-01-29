@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
-
   describe "GET page" do
     context "true page" do
       it "Render the index template" do

@@ -1,5 +1,4 @@
 Rails.application.configure do
-
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -68,12 +67,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :tls => true,
-      address: 'smtp.yandex.ru',
-      port: 465,
-      domain: 'adamenko.pp.ua',
-      authentication: 'plain',
-      user_name: 'postmaster@adamenko.pp.ua',
-      password: 'vigilant8'
+    tls: true,
+    address: 'smtp.yandex.ru',
+    port: 465,
+    domain: 'adamenko.pp.ua',
+    authentication: 'plain',
+    user_name: 'postmaster@adamenko.pp.ua',
+    password: 'vigilant8'
   }
 end
