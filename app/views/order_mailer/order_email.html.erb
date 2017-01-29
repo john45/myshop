@@ -4,7 +4,7 @@
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 </head>
 <body style="background-color: darkseagreen">
-<h1>Welcome to https://adamenko.pp.ua, <%= @order.name %></h1>
+<h1>Welcome to <%= link_to 'adamenko.pp.ua', root_url %>, dear <%= @order.name %></h1>
 <p>
   You have successfully signed up to example.com,
   your phone is: <%= @order.phone %>.<br/>

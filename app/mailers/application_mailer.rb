@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "postmaster@adamenko.pp.ua"
+  ADMIN_EMAIL = "postmaster@adamenko.pp.ua"
+  default from: ADMIN_EMAIL
   layout 'mailer'
 end

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body style="background-color: darkseagreen">
+<h1>Dear admin! You have new order on you <%= link_to 'adamenko.pp.ua', root_url %>,
+  from <%= @order.name %></h1>
+
+Cantact data:
+<ul>
+  <li>Order id: <%= @order.id %></li>
+  <li>Customer name: <%= @order.name %></li>
+  <li>Customer phone number: <%= @order.phone %></li>
+  <li>Customer email: <%= @order.email %></li>
+</ul>
+
+
+<p>Matzu say: "Be lazy!!!"</p>
+</body>
+</html>
