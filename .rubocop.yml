@@ -10,3 +10,19 @@ AllCops:
     - 'bin/spring'
     - 'test/*/*/*'
     - 'config/puma.rb'
+Metrics/MethodLength:
+  Max: 15
+Metrics/LineLength:
+  Exclude:
+    - 'config/initializers/devise.rb'
+  Max: 120
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/*'
+    - 'app/admin/order.rb'
+  Max: 25
+Metrics/AbcSize:
+  Exclude:
+    - 'app/controllers/orders_controller.rb'
+    - 'app/controllers/products_controller.rb'
+  Max: 15

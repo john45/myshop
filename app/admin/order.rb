@@ -6,7 +6,7 @@ ActiveAdmin.register Order do
   scope :in_progress
   scope :finish
 
-  index do |orders|
+  index do
     column :name
     column :email
     column :phone
@@ -33,7 +33,7 @@ ActiveAdmin.register Order do
     end
   end
 
-  form do |order|
+  form do
     inputs 'Details' do
       input :email
       input :name

@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
       else
         Product.all
       end.paginate(page: params[:page], per_page: 9)
-
     @product_for_carusel = Product.all.sample(5)
     render :index
   end

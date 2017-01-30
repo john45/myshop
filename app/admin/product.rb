@@ -3,11 +3,11 @@ ActiveAdmin.register Product do
   remove_filter :feature_values, :order_products
   permit_params :name, :description, :price, :product, :category_id
 
-  batch_action :destroy do |products|
+  batch_action :destroy do
     redirect_to admin_products_path, alert: "Didn't really delete these!"
   end
 
-  index do |products|
+  index do
     selectable_column
     column 'Image' do |product|
       link_to image_tag(image_url("50x30/#{rand(4)}.jpg")), admin_product_path(product)
@@ -24,5 +24,15 @@ ActiveAdmin.register Product do
     end
     column 'Date of creation', :created_at
     actions
+  end
+
+  form do |f|
+    f.inputs 'Detail' do
+      f.input :category, collection: Category.all.select { |cat| cat.is_childless? }
+      f.input :name
+      f.input :description
+      f.input :price
+    end
+    f.actions
   end
 end
