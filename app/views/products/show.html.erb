@@ -37,7 +37,7 @@
       <p class="pull-right"><%= pluralize(@product.reviews.list_of_published_only.count, 'review') %></p>
       <p>
         <% total_rating = 0 %>
-        <% @product.reviews.list_of_published_only.each do |view| %>
+        <% @product.reviews.each do |view| %>
             <% total_rating += view.rating %>
         <% end %>
         
