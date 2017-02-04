@@ -19,7 +19,7 @@ Metrics/LineLength:
 Metrics/BlockLength:
   Exclude:
     - 'config/environments/*'
-    - 'app/admin/order.rb'
+    - 'app/admin/*'
   Max: 25
 Metrics/AbcSize:
   Exclude:

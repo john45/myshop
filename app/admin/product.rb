@@ -10,7 +10,7 @@ ActiveAdmin.register Product do
   index do
     selectable_column
     column 'Image' do |product|
-      link_to image_tag(image_url("50x30/#{rand(4)}.jpg")), admin_product_path(product)
+      link_to image_tag(image_url("50x30/#{product.immage}")), admin_product_path(product)
     end
     column 'Category', :category do |product|
       product.category.name if product.category.name
@@ -28,7 +28,7 @@ ActiveAdmin.register Product do
 
   form do |f|
     f.inputs 'Detail' do
-      f.input :category, collection: Category.all.select { |cat| cat.is_childless? }
+      f.input :category, collection: Category.all.select(&:is_childless?)
       f.input :name
       f.input :description
       f.input :price

@@ -2,14 +2,14 @@
 #
 # Table name: order_products
 #
+#  id           :integer          not null, primary key
 #  order_id     :integer
 #  product_id   :integer
 #  actual_price :decimal(8, 2)    default(0.0)
-#  quantity     :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  id           :integer          not null, primary key
 #  cart_id      :integer
+#  quantity     :integer          default(1)
 #
 
 class OrderProduct < ApplicationRecord

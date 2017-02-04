@@ -21,14 +21,19 @@ end
   name = Faker::Book.genre
   description = Faker::Lorem.paragraph
   price = Faker::Commerce.price
-  Product.create(name: name, description: description, price: price, category_id: rand(1..10))
+  price_old = price - 1
+  Product.create(name: name,
+                 description: description,
+                 price: price,
+                 price_old: price_old,
+                 category_id: rand(1..10),
+                 immage: "#{rand(0..4)}.jpg")
 end
 
-n = 1
-50.times do
-  p = Product.find(n)
+50.times do |i|
+  p = Product.find(i+1)
   title = Faker::Color.color_name
-  FeatureValue.create(feature_id: rand(1..10), product_id: n, title: title)
+  FeatureValue.create(feature_id: rand(1..10), product_id: i+1, title: title)
 
   reviews = rand(1..20)
   reviews.times do
@@ -38,27 +43,7 @@ n = 1
     body = Faker::Lorem.paragraphs
     rating = rand(1..5)
     published = true
-
     Review.create(author: author, product_id: product_id, body: body, rating: rating, email: email, published: published)
   end
-  n += 1
 end
 
-# timess = Product.all.count
-# n = 1
-# timess.times do
-#   p = Product.find(1)
-#
-#   reviews = rand(1..20)
-#   reviews.times do
-#     email = Faker::Internet.email
-#     author = Faker::Name.first_name + ' ' + Faker::Name.last_name
-#     product_id = p.id
-#     body = Faker::Lorem.paragraphs
-#     rating = rand(1..5)
-#     published = true
-#
-#     Review.create(author: author, product_id: product_id, body: body, rating: rating, email: email, published: published)
-#   end
-#   n += 1
-# end

@@ -9,6 +9,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  category_id :integer
+#  price_old   :decimal(8, 2)    default(0.0)
 #
 
 class Product < ApplicationRecord
@@ -20,7 +21,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_products
   belongs_to :category
 
-  scope :includes_reviews_published_true, -> { includes(:reviews).where(reviews: {published: true}) }
+  scope :includes_reviews_published_true, -> { includes(:reviews).where(reviews: { published: true }) }
 
   validates :name, presence: true, length: { minimum: 3 }
   validates :description, presence: true, length: { minimum: 3 }

@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: search_seggestions
+#
+#  id         :integer          not null, primary key
+#  term       :string
+#  popularity :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class SearchSeggestion < ApplicationRecord
   def self.term_for(prefix)
     seggestion = where("term ILIKE ?", "#{prefix}_%")
