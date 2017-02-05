@@ -6,7 +6,7 @@ class OrderProductsController < ApplicationController
     session[:count_of_products] += 1
 
     if @order_product.save
-      render 'order_products/create'
+      render :create
     else
       render action: 'new'
     end

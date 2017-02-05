@@ -10,6 +10,7 @@
 #  updated_at  :datetime         not null
 #  category_id :integer
 #  price_old   :decimal(8, 2)    default(0.0)
+#  immage      :string
 #
 
 class Product < ApplicationRecord
