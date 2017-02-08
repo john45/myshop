@@ -1,3 +1,5 @@
-https://myshopmyshop.herokuapp.com/
+on web:
+https://adamenko.pp.ua
 
-https://myshopmyshop.herokuapp.com/admin/
+on git:
+https://github.com/john45/myshop
