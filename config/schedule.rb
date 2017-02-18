@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 12.hours do # 1.minute 1.day 1.week 1.month 1.year is also supported
+every 10.minutes do # 1.minute 1.day 1.week 1.month 1.year is also supported
   rake "search_seggestions:index"
 end
