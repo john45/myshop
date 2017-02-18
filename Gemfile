@@ -41,6 +41,7 @@ gem 'awesome_print'
 gem 'faker'
 gem 'rack-mini-profiler'
 gem 'rails-controller-testing'
+gem 'whenever', :require => false
 
 gem 'rails_12factor', group: :production
 

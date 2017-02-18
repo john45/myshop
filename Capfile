@@ -13,6 +13,7 @@ require 'capistrano/rails/db'
 require 'capistrano/rails/console'
 require 'capistrano/upload-config'
 require 'sshkit/sudo'
+require 'whenever/capistrano'
 
 # Include tasks from other gems included in your Gemfile
 #
